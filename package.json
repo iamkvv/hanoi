@@ -1,0 +1,31 @@
+{
+  "name": "cra2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "emotion": "^8.0.12",
+    "gh-pages": "^1.1.0",
+    "jss": "^9.6.0",
+    "jss-preset-default": "^4.0.1",
+    "radium": "^0.21.0",
+    "ramda": "^0.25.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-jss": "^8.2.1",
+    "react-scripts": "1.1.0",
+    "rebass": "^1.0.4",
+    "recompose": "^0.26.0",
+    "resize-observer-polyfill": "^1.5.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-plugin-emotion": "^8.0.12",
+    "react-app-rewire-emotion": "^3.0.0",
+    "react-app-rewired": "^1.4.0"
+  }
+}
