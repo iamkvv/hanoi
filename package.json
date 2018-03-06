@@ -1,21 +1,18 @@
-///// --- https://medium.freecodecamp.org/surge-vs-github-pages-deploying-a-create-react-app-project-c0ecbf317089
 {
   "name": "cra2",
   "version": "0.1.0",
   "homepage": "https://iamkvv.github.io/hanoi",
   "private": true,
   "dependencies": {
-    "emotion": "^8.0.12",
     "gh-pages": "^1.1.0",
-    "jss": "^9.6.0",
-    "jss-preset-default": "^4.0.1",
+    "jss": "^9.8.0",
+    "jss-preset-default": "^4.3.0",
     "radium": "^0.21.0",
-    "ramda": "^0.25.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-jss": "^8.2.1",
-    "react-scripts": "1.1.0",
-    "rebass": "^1.0.4",
+    "react-jss": "^8.3.3",
+    "react-markdown": "^3.2.2",
+    "react-scripts": "1.1.1",
     "recompose": "^0.26.0",
     "resize-observer-polyfill": "^1.5.0"
   },

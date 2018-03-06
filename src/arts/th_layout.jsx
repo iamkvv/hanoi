@@ -64,7 +64,7 @@ const style = { // основная раскладка
         },
 
         gridGap: '2px 10px',
-        backgroundColor: '#f5f5f5',
+        backgroundColor:'#d5e9f2;', //'#f5f5f5',
         padding: 20,
         width: 'auto',
         minWidth:500,
@@ -74,7 +74,7 @@ const style = { // основная раскладка
         borderTop: '1px solid silver',
         alignSelf: 'stretch',
         paddingTop: 10,
-        color: 'green',
+        color: '#676571;',
         fontSize: 16,
         gridArea: '11 / 1 / 12 / 6'
     }

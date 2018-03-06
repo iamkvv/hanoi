@@ -18,7 +18,7 @@ const manstyle = {
         width: '100%',
     
         padding: '5px 0px',
-        border: '1px solid blue',
+        border: '1px solid #1476f9',
         borderRadius: 15,
         color: 'blue',
         fontSize: '12px',

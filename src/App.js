@@ -1,22 +1,13 @@
 import React, { Component } from 'react'
 import Articles from './articles'
-
-//import { css } from 'emotion'
-import logo from './logo.svg'
-// import jss from 'jss'
-
+//import logo from './logo.svg'
 import injectSheet from 'react-jss'
 import './App.css'
+import Accordion from './accordion'
 
-
-// import {
-//   Card,
-//   Box,
-//   BackgroundImage,
-//   Subhead,
-//   Small
-// } from 'rebass'
-
+//https://medium.freecodecamp.org/surge-vs-github-pages-deploying-a-create-react-app-project-c0ecbf317089
+//https://icons8.ru/icon/4696/%D0%BF%D0%B0%D0%B3%D0%BE%D0%B4%D0%B0
+//https://github.com/kriasoft/react-starter-kit/issues/909#issuecomment-252969542
 
 ////!!  https://gridbyexample.com/patterns/
 class App extends Component {
@@ -24,11 +15,22 @@ class App extends Component {
     super();
     this.state={
       module: null,
-      data: [{id:1,name:'aaa'},{id:2,name:'bb'}]
      }
   }
+
+componentDidMount() {
+  //th_main
+  this.getArticle("th_main")
+}
+
+
   getArticle = (e) => {
-    const moduleName = e.target.id.toLowerCase()
+    let moduleName;
+    if (typeof e === 'object') {
+      moduleName = e.target.id.toLowerCase();
+    } else {
+      moduleName = e;
+    }
     import(`./arts/${moduleName}`)
       .then(({ ...module }) => {
         this.setState({ module: module.default });
@@ -46,36 +48,27 @@ class App extends Component {
     return (
       <div className="wrapper1">
         <header class="header">
-          <div style={{backgroundColor:'#faffaa', margin:'auto 10'}}>
-              asdfg
-          </div>
-        
+            ХАНОЙСКАЯ БАШНЯ
         </header>
 
 
-        <aside class="sidebar">
-        Sidebar
+        {/* <aside class="sidebar">
           <Articles getArticle={this.getArticle}/>
-        </aside>
-        <article class="content">
-          <hr />
-          {Module && <Module />}  {/*<-- {this.state.module && <this.state.module />}  */}
-          <hr />
+        </aside> */}
 
+        <article class="content">
+          {Module && <Module />}  {/*<-- {this.state.module && <this.state.module />}  */}
         </article>
-        <aside class="rightbar">
-        
-        Правый Sidebar
-        <svg width='14' height='11' viewBox='0 0 14 11'>
-            <title>
-              switch-check
-          </title>
-            <path d='M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0' fill='#fff' fillRule='evenodd' />
-          </svg>
-        
-        
-        </aside>
-        <footer class="footer">My footer</footer>
+
+
+         <footer class="footer">
+           <Accordion data={[
+             {name:"1", caption:"Почему ханойская башня"},
+             {name:"2", caption:"Как это сделано"},
+             {name:"3", caption:"Еще что-то!!"}
+           ]}/>
+         </footer> 
+
       </div>
     );
   }
