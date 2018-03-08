@@ -63,6 +63,8 @@ grid-row: 1/2;
   height: 400px;
   margin-top: 20px;
   overflow: auto;
+  width:75%;
+  margin:0 auto;
   }
 
 

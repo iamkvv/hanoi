@@ -17,7 +17,9 @@ const style = {
         height: 25,
         textAlign: 'center',
         zIndex: 2,
-        pointerEvents:'none'
+        pointerEvents:'none',
+        lineHeight:'25px'
+
     }
 }
 

@@ -24,6 +24,9 @@ const style = {
     forShow:{
         fontSize:'1.1em',
         padding:5,
+        '& pre': {
+            overflow:'auto'
+        }
      },
     forHide:{
         overflow:'hidden',
