@@ -1,0 +1,2 @@
+webpackJsonp([8],{69:function(e,l,t){"use strict";Object.defineProperty(l,"__esModule",{value:!0});var r=t(1),a=t.n(r),n=function(){return a.a.createElement("div",null,a.a.createElement("h1",null,"--HOC-HOC--!!!"),a.a.createElement("iframe",{width:"100%",height:"300",src:"//jsfiddle.net/reactjs/69z2wepo/embedded/js,result/",allowpaymentrequest:!0,allowfullscreen:"allowfullscreen",frameborder:"0"}))};l.default=n}});
+//# sourceMappingURL=8.3fb1d3ba.chunk.js.map
