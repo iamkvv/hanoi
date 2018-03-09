@@ -2,27 +2,25 @@ import React from 'react'
 import injectSheet from 'react-jss'
 import ReactMarkdown  from 'react-markdown'
 
-
 const style = {
     caption: {
-        height: 25,
         cursor:'pointer',
         height: 30,
+        lineHeight: '30px',
         fontSize: '1.3em',
         textAlign: 'center',
         color: '#fff',
-        lineHeight: '30px',
         backgroundColor: '#1565e5',
         backgroundImage: 'linear-gradient(to bottom, #3cb0fd, #3498db)',
         marginBottom: 1
     },
     content:{
         transition: 'font-size 0.25s ease-in-out',
-        padding: '10px 50px',
+       // padding: '10px 50px',
         backgroundColor: '#d9feff',
     },
     forShow:{
-        fontSize:'1.1em',
+        fontSize:'1em',
         padding:5,
         '& pre': {
             overflow:'auto'
@@ -34,8 +32,6 @@ const style = {
         padding:0,
     }
 }
-
-
 
 class AccordItem extends React.Component{
     constructor(props) {
@@ -63,7 +59,6 @@ class AccordItem extends React.Component{
         }
     }
 
-
     hideText = (idx) => {
         this.setState({ isActive: false });
     }
@@ -81,7 +76,7 @@ class AccordItem extends React.Component{
       }
 
     render() {
-        const { classes, idx, name, caption, onItemClick } = this.props;
+        const { classes, idx, caption, onItemClick } = this.props;
         const { isActive,md } = this.state;
         const optioncls =  isActive ? classes.forShow: classes.forHide;
         const cls =`${classes.content} ${optioncls}`

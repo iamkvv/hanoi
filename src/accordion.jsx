@@ -34,7 +34,6 @@ class Accordion extends React.Component{
         this.setState({ActiveItemIdx:idx})
     }
 
-
     render() {
         const { data } = this.props;
         return (

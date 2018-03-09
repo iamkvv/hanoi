@@ -16,7 +16,10 @@ const manstyle = {
         flexDirection: 'column',
         gridArea: '2 / 4 / 11 / 5',
         width: '100%',
-    
+
+        // maxWidth: '200px',
+        // justifySelf: 'center',
+
         padding: '5px 0px',
         border: '1px solid #1476f9',
         borderRadius: 15,
@@ -77,24 +80,6 @@ class HTower extends React.Component {
     }
     n=0;
     stout=[];
-
-// componentDidMount() {
-//     this.ro.observe(ReactDOM.findDOMNode(this));
-// //console.log(ReactDOM.findDOMNode(PegPanel))
-// }
-
-
-// ro = new ResizeObserver((entries, observer) => {
-//     for (const entry of entries) {
-//         const {left, top, width, height} = entry.contentRect;
-
-//         console.log('Element:', entry.target);
-//         debugger;
-//         console.log(`Element's size: ${ width }px x ${ height }px`);
-//         console.log(`Element's paddings: ${ top }px ; ${ left }px`);
-//     // }
-// });
-
 
     onStart = (e) => {
         this.setState({ isStarted: true }, () => {
@@ -197,22 +182,6 @@ class HTower extends React.Component {
             alert('??')
         }
 
-        /*
-        if (!blinsOnPeg.length && !isActiveBlin) return; //нет блинов на выбранном peg'e  и нет активного блина
-
-        if (blinsOnPeg.length > 0 && !isActiveBlin) { //есть блины на выбранном peg'e  и нет активного блина
-            var minBlinIdx = blins.findIndex(this.IdxMinBlin(peg, minsizePeg));// и его индекс в основном массиве 
-            blClone[minBlinIdx] = { ...blClone[minBlinIdx], active: true, row: null }
-         }
-        if (!blinsOnPeg.length && isActiveBlin){ //нет блинов на выбранном peg'e  и Есть актив блин
-            blClone[actBlinIdx] = { ...blClone[actBlinIdx], col: peg, row: 7, active: false };
-        }
-        if (blinsOnPeg.length > 0 && isActiveBlin) { //есть блины на выбранном peg'e  и Есть актив блин 
-            if(minsizePeg < blClone[actBlinIdx].size) return; //если мин. размер на Peg'e < размера активного - выход
-
-            blClone[actBlinIdx] = { ...blClone[actBlinIdx], col: peg, active: false, row: 7 - blinsOnPeg.length };
-        }
-        */
         if (isMove) {
             this.setState((prevstate, props) => ({ blins: blClone, moves: prevstate.moves + 1 }));
             setTimeout(() => {
@@ -242,7 +211,7 @@ class HTower extends React.Component {
  
     moveBlin2 = (from, to, n) => {
         this.stout.push(setTimeout(() => {
-            console.log('???', this.state.time, ' <===  T', from, ' -> ', to)
+         //   console.log('???', this.state.time, ' <===  T', from, ' -> ', to)
 
             this.setState((prevState, props) => {
                 return (
@@ -257,53 +226,23 @@ class HTower extends React.Component {
     moveDisk = function (fromPeg, toPeg) {
    
             setTimeout(() => {
-                console.log('moveDisk: ', fromPeg + ' -> ' + toPeg);
+               // console.log('moveDisk: ', fromPeg + ' -> ' + toPeg);
              }, 2000);
-       
-
-        // function moveTower(height, fromPole, toPole, withPole) {
-        //     //debugger;
-        //     if (height >= 1) {
-        //         moveTower(height - 1, fromPole, withPole, toPole);
-        //         //t=t+1000;
-        //         moveDisk(fromPole, toPole, t);
-
-        //         moveTower(height - 1, withPole, toPole, fromPole);
-        //     }
-        // }
-     
-/*
-const self= this;
-        const { blins } = this.state;
-        const blClone = this.state.blins.map(el => ({ ...el }));// clone blins
-        const blinsOnFromPeg = blins.filter(el => el.col === fromPeg && el.row != null);
-        const blinsOnToPeg = blins.filter(el => el.col === toPeg && el.row != null);
-
-        const minsizeOnFromPeg = Math.min(...blinsOnFromPeg.map(el => el.size));//мин размере на FromPeg'e
-        const minBlinIdxOnFromPeg = blins.findIndex(this.IdxMinBlin(fromPeg, minsizeOnFromPeg));// индекс минимального блина в основном массиве 
-        //---------------
-        //debugger;
-        blClone[minBlinIdxOnFromPeg] = { ...blClone[minBlinIdxOnFromPeg], col: toPeg, row: 7 - blinsOnToPeg.length };
-
-    //??  this.setState({blins:blClone} )  
-*/
-//return blClone;
     }
 
 
     solveHanoi = function (numDisks, fromPeg, toPeg) {
         if (numDisks < 1) {
-           // debugger;
             return;
         }
         var sparePeg = (3 - (fromPeg - 1) - (toPeg - 1)) + 1;
-        console.log('solveHanoi--', numDisks, ' --| ' + fromPeg + ' -- ' + toPeg +' -- ' +  sparePeg);
+    //    console.log('solveHanoi--', numDisks, ' --| ' + fromPeg + ' -- ' + toPeg +' -- ' +  sparePeg);
        this.solveHanoi(numDisks - 1, fromPeg, sparePeg);
 
            this.n = this.n+500
           this.moveBlin2(fromPeg,toPeg,this.n);
 
-        console.log('solveHanoi--22 =', numDisks, ' --| ' + fromPeg + ' -- ' + toPeg +' -- ' +  sparePeg);
+      //  console.log('solveHanoi--22 =', numDisks, ' --| ' + fromPeg + ' -- ' + toPeg +' -- ' +  sparePeg);
         this.solveHanoi(numDisks - 1, sparePeg, toPeg);
 
     };

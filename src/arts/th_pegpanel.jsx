@@ -24,10 +24,6 @@ class PegPanel extends React.Component {
         for (const entry of entries) {
             const {left, top, width, height} = entry.contentRect;
     
-            console.log('Element:', entry.target);
-           // debugger;
-            console.log(`Element's size: ${ width }px x ${ height }px`);
-            console.log(`Element's paddings: ${ top }px ; ${ left }px`);
         }
     });
     

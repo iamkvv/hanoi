@@ -11,17 +11,16 @@ import Accordion from './accordion'
 
 ////!!  https://gridbyexample.com/patterns/
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state={
+    this.state = {
       module: null,
-     }
+    }
   }
 
-componentDidMount() {
-  //th_main
-  this.getArticle("th_main")
-}
+  componentDidMount() {
+    this.getArticle("th_main")
+  }
 
 
   getArticle = (e) => {
@@ -43,32 +42,50 @@ componentDidMount() {
   //////////
 
   render() {
-    const {module:Module}= this.state;
+    const { module: Module } = this.state;
 
     return (
-      <div className="wrapper1">
-        <header class="header">
+      <div style={{width:'75%', margin:'0 auto', maxWidth: '850px'}}>
+          {Module && <Module />}
+      <div>
+
+      </div>
+
+
+        <div className="wrapper1">
+          <header className="header">
             ХАНОЙСКАЯ БАШНЯ
         </header>
 
 
-        {/* <aside class="sidebar">
+          {/* <aside class="sidebar">
           <Articles getArticle={this.getArticle}/>
         </aside> */}
 
-        <article class="content">
-          {Module && <Module />}  {/*<-- {this.state.module && <this.state.module />}  */}
-        </article>
+          <article className="content">
+            {/* {Module && <Module />}  */}
+            
+             {/*<-- {this.state.module && <this.state.module />}  */}
+          </article>
 
-
-         <footer class="footer">
-           <Accordion data={[
+          {/* <footer className="footer"> */}
+            {/* <Accordion data={[
              {name:"1", caption:"Почему ханойская башня"},
-             {name:"2", caption:"Как это сделано"},
-             {name:"3", caption:"Еще что-то!!"}
-           ]}/>
-         </footer> 
+             {name:"2", caption:"Accordion.jsx"},
+             {name:"3", caption:"Accordion-item.jsx"}
+           ]}/> */}
+          {/* </footer> */}
 
+        </div>
+        <div className='wrapper2'>
+          <div className='accord'>
+            <Accordion data={[
+              { name: "1", caption: "Почему ханойская башня" },
+              { name: "2", caption: "Accordion.jsx" },
+              { name: "3", caption: "Accordion-item.jsx" }
+            ]} />
+          </div>
+        </div>
       </div>
     );
   }

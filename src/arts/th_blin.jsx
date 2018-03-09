@@ -19,7 +19,6 @@ const style = {
         zIndex: 2,
         pointerEvents:'none',
         lineHeight:'25px'
-
     }
 }
 
