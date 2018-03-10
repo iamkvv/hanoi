@@ -1,0 +1,2 @@
+webpackJsonp([13],{158:function(n,s,o){var i=o(259);"string"===typeof i&&(i=[[n.i,i,""]]);var r={hmr:!1};r.transform=void 0;o(157)(i,r);i.locals&&(n.exports=i.locals)},259:function(n,s,o){s=n.exports=o(156)(!0),s.push([n.i,"body{margin:0;padding:0;font-family:sans-serif}","",{version:3,sources:["C:/Learn/CRA_0/cra2/src/index.css"],names:[],mappings:"AAAA,KACE,SAAU,AACV,UAAW,AACX,sBAAwB,CACzB",file:"index.css",sourcesContent:["body {\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n}\n"],sourceRoot:""}])}});
+//# sourceMappingURL=13.7e2b998b.chunk.js.map
