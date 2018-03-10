@@ -13,7 +13,8 @@ const style = {
             marginTop: '10px',
             '& > button':{
                 display:'block',
-                marginBottom:'9px'
+                marginBottom:'9px',
+                marginRight: '3px',
             }
          },
 
@@ -38,6 +39,9 @@ const style = {
         cursor: 'default',
         color:'lightgray'
     },
+    // '@media  (max-width:600px)':{
+    //     marginRight: '3px',
+    // }
 
 }}
 

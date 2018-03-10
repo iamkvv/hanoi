@@ -10,12 +10,17 @@ body {
 }
 
 body {
-  background-image: url("/abstract32.jpg");
-  background-repeat: no-repeat;
-  background-color: #f4f6f5;
+  /* background-image: url("/abstract32.jpg");
   background-size: cover;
+  background-repeat: no-repeat; */
+  background-color: #f4f6f5;
+  
 }
 /* ------------------- */
+
+code{
+  font-size: 120%;
+}
 
 .header{
 grid-column:2 / 3;

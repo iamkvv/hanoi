@@ -59,7 +59,7 @@ const style = { // основная раскладка
             gridTemplateColumns: 'repeat(3,1fr) minmax(170px, 1fr)'
         },
         '@media  (max-width:600px)':{
-            gridTemplateRows: "80px 25px 70px  repeat(7,25px) 55px",
+            gridTemplateRows: "auto 25px 70px  repeat(7,25px) 55px",
             gridTemplateColumns: 'repeat(3,1fr)'
         },
 
@@ -67,7 +67,7 @@ const style = { // основная раскладка
         backgroundColor:'#d5e9f2;', //'#f5f5f5',
         padding: 20,
         width: 'auto',
-        minWidth:500,
+        minWidth:400,
         color: 'white'
     },
     instruct:{

@@ -14,9 +14,9 @@ const style = {
          },
          '@media  (max-width:600px)':{
             marginTop: '12px',
-            marginLeft: '10px',
+            marginLeft: '4px',
             '&  div': {
-                marginBottom:15
+                marginBottom:7
             }
          },
 
@@ -29,9 +29,10 @@ const style = {
         margin: 0
     },
      '@media  (max-width:600px)':{
-        fontSize: 26,
-        marginTop: -35,
-        marginLeft: 70,
+        fontSize: 20,
+        marginTop: -7,
+        textAlign: 'center'
+        // marginLeft: 70,
      },
     }
 }

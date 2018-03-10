@@ -7,8 +7,6 @@ import BlinRange from './th_blinrange'
 import Start from './th_start'
 import Modes from './th_modes'
 import Info from './th_info'
-//import ResizeObserver from 'resize-observer-polyfill'
-
 
 const manstyle = {
     mancontainer: {
@@ -34,10 +32,9 @@ const manstyle = {
         },
         '@media  (max-width:600px)':{
             flexDirection: 'row',
-            gridArea: '1 / 1 / 2 / 4',
-            height:65
+            gridArea: '1 / 1 / 2 / 5',
+            height:'auto'
         },
-
     }
 }
 
@@ -75,8 +72,6 @@ class HTower extends React.Component {
           this.onStart = this.onStart.bind(this);
           this.onPanelClick = this.onPanelClick.bind(this);
           this.checkWin = this.checkWin.bind(this);
-          this.moveDisk = this.moveDisk.bind(this);
-          
     }
     n=0;
     stout=[];
@@ -133,7 +128,7 @@ class HTower extends React.Component {
         if (blins.filter(el => el.col === 2 && el.row != null).length === currBlinCount) {
             this.setState((prevstate, props) => ({ isWin: true }));
             clearInterval(this.state.tid); 
-            ///
+
             for(var i=0; i<this.stout.length; i++){
                 clearTimeout( this.stout[i]);
             }
@@ -211,40 +206,26 @@ class HTower extends React.Component {
  
     moveBlin2 = (from, to, n) => {
         this.stout.push(setTimeout(() => {
-         //   console.log('???', this.state.time, ' <===  T', from, ' -> ', to)
-
             this.setState((prevState, props) => {
                 return (
                     { moves: prevState.moves + 1, blins: this.newArr(prevState, from, to) }
                 )
             });
-            this.checkWin()//?????
+            this.checkWin()
         }, n)
         )}
-
-
-    moveDisk = function (fromPeg, toPeg) {
-   
-            setTimeout(() => {
-               // console.log('moveDisk: ', fromPeg + ' -> ' + toPeg);
-             }, 2000);
-    }
-
 
     solveHanoi = function (numDisks, fromPeg, toPeg) {
         if (numDisks < 1) {
             return;
         }
         var sparePeg = (3 - (fromPeg - 1) - (toPeg - 1)) + 1;
-    //    console.log('solveHanoi--', numDisks, ' --| ' + fromPeg + ' -- ' + toPeg +' -- ' +  sparePeg);
-       this.solveHanoi(numDisks - 1, fromPeg, sparePeg);
+        this.solveHanoi(numDisks - 1, fromPeg, sparePeg);
 
-           this.n = this.n+500
-          this.moveBlin2(fromPeg,toPeg,this.n);
+        this.n = this.n+500
+        this.moveBlin2(fromPeg,toPeg,this.n);
 
-      //  console.log('solveHanoi--22 =', numDisks, ' --| ' + fromPeg + ' -- ' + toPeg +' -- ' +  sparePeg);
         this.solveHanoi(numDisks - 1, sparePeg, toPeg);
-
     };
 
     render() {

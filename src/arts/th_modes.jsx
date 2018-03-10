@@ -23,7 +23,7 @@ const style = {
          },
          '@media  (max-width:600px)':{
             width: 'auto',
-            margin: '6px 16px',
+            margin: '6px 3px',
             '& label': {
                 display:'block',
                 cursor: 'pointer'
